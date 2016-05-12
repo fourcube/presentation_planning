@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
-<h1>Test<h1>
-<h2>{{content}}</h2>
+{% block content %}
+  <form action="{% url 'create_new' %}" method="post">
+    {% csrf_token %}
+    {% crispy form %}
+  </form>
+{% endblock %}

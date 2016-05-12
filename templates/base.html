@@ -7,10 +7,8 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="{% static "css/bootstrap.min.css" %}"  media="screen,projection"/>
-
     <link type="text/css" rel="stylesheet" href="{% static "css/bootstrap-datepicker3.min.css" %}"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="{% static "css/dashboard.css" %}"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="{% static "css/overrides.css" %}"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="{% static "css/fullcalendar.min.css" %}"  media="screen,projection"/>
 
     <!--Let browser know website is optimized for mobile-->
@@ -27,11 +25,10 @@
             <ul class="nav nav-sidebar">
               <li><a href="#">List 1</a></li>
               <li><a href="#">List 2</a></li>
-              <li><button type="button" class="btn btn-primary" style="margin-left: 20px; margin-top: 5px;">Formular erstellen</button></li>
+              <li><button type="button" class="btn btn-primary"  href="{% url 'create_new' %}" style="margin-left: 20px; margin-top: 5px;">Formular erstellen</button></li>
         </div>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">{{title}}</h1>
           {% block content %}
           {% endblock %}
         </div>
@@ -44,7 +41,6 @@
     <script type="text/javascript" src="{% static "js/bootstrap-datepicker.min.js" %}"></script>
     <script type="text/javascript" src="{% static "js/bootstrap-datepicker.de.js" %}"></script>
     <script type="text/javascript" src="{% static "js/moment.min.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/fullcalendar.min.js" %}"></script>
     <script type="text/javascript">
       $(document).ready(function() {
         $('.dateinput').datepicker({
@@ -64,6 +60,5 @@
     </script>
     {% block scripts %}
     {% endblock %}
-
   </body>
 </html>
